@@ -1,0 +1,223 @@
+/* ====================
+   Variáveis do Design System
+==================== */
+:root {
+    /* Paleta de cores */
+    --cor-primaria: #4CAF50;
+    --cor-secundaria: #81C784;
+    --cor-accent: #FFC107;
+    --cor-sucesso: #4CAF50;
+    --cor-erro: #F44336;
+    --cor-fundo: #ffffff;
+    --cor-texto: #333333;
+    --cor-texto-secundario: #666666;
+    --cor-hover: #388E3C;
+
+    /* Tipografia */
+    --fonte-titulo: 2rem;
+    --fonte-subtitulo: 1.5rem;
+    --fonte-normal: 1rem;
+    --fonte-pequena: 0.875rem;
+    --fonte-menor: 0.75rem;
+
+    /* Espaçamento modular */
+    --space-8: 8px;
+    --space-16: 16px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-48: 48px;
+    --space-64: 64px;
+}
+
+/* ====================
+   Reset e Base
+==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====================
+   Layout Principal
+==================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* altura mínima = altura da tela */
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin: 0;
+}
+
+main {
+    flex: 1; /* ocupa todo o espaço disponível entre header e footer */
+    padding: var(--space-32);
+}
+
+/* ====================
+   Header e Navegação
+==================== */
+header {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    padding: var(--space-16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: var(--fonte-titulo);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-16);
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--space-8);
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--cor-hover);
+    border-radius: 4px;
+}
+
+/* Menu hamburger */
+.hamburger {
+    display: none;
+    font-size: var(--fonte-titulo);
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ====================
+   Banner
+==================== */
+#banner {
+    text-align: center;
+    margin-bottom: var(--space-32);
+}
+
+#banner img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+#banner h1 {
+    margin-top: var(--space-16);
+    font-size: var(--fonte-titulo);
+}
+
+/* ====================
+   Seções
+==================== */
+section {
+    margin-bottom: var(--space-32);
+}
+
+h2 {
+    font-size: var(--fonte-subtitulo);
+    margin-bottom: var(--space-16);
+}
+
+/* ====================
+   Cards
+==================== */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: var(--space-16);
+    margin-bottom: var(--space-16);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ====================
+   Formulário
+==================== */
+form {
+    max-width: 500px;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-16);
+}
+
+input {
+    width: 100%;
+    padding: var(--space-8);
+    margin-top: var(--space-4);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+.error {
+    color: var(--cor-erro);
+    font-size: var(--fonte-menor);
+}
+
+/* Botão */
+button {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    padding: var(--space-8) var(--space-16);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: var(--cor-hover);
+}
+
+/* ====================
+   Footer
+==================== */
+footer {
+    text-align: center;
+    padding: var(--space-16);
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+
+/* ====================
+   Responsivo
+==================== */
+@media(max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+    }
+    nav ul.open {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
